@@ -1,5 +1,5 @@
 class Api::UsersController < ApplicationController
-  
+  skip_before_action :verify_authentication, only: [:create]
   before_action :set_user, only: [:show, :edit, :destroy]
 
 
@@ -39,7 +39,7 @@ class Api::UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:username, :password)
+      params.require(:user).permit(:username, :password, :email)
     end
 
   
