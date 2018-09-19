@@ -1,0 +1,8 @@
+digraph models_diagram {
+	graph[overlap=false, splines=true, bgcolor="none"]
+	"Question" [shape=Mrecord, label="{Question|id :bigint\lbody :character varying\lcreated_at :timestamp without time zone\lupdated_at :timestamp without time zone\luser_id :bigint\l}"]
+	"Answer" [shape=Mrecord, label="{Answer|id :bigint\lbody :character varying\lquestion_id :bigint\lcreated_at :timestamp without time zone\lupdated_at :timestamp without time zone\luser_id :bigint\l}"]
+	"ApplicationRecord" []
+	"User" [shape=Mrecord, label="{User|id :bigint\lusername :character varying\lpassword_digest :character varying\lcreated_at :timestamp without time zone\lupdated_at :timestamp without time zone\lemail :character varying\lauth_token :character varying\l}"]
+	"Question" -> "Answer" [arrowtail=odot, arrowhead=crow, dir=both color="#CBA253"]
+}

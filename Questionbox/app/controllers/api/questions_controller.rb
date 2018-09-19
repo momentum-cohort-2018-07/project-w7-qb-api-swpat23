@@ -9,9 +9,9 @@ class Api::QuestionsController < ApplicationController
     end
   
     def show
-      @answers = @question.answers
+      # @answers = @question.answers
       @answer = Answer.new(params[:question_id])
-      render json: @answer
+      render json: @question.answers
     end
   
     def edit

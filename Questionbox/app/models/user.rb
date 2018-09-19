@@ -6,5 +6,8 @@ class User < ApplicationRecord
   has_secure_password
   validates :username, presence: true, uniqueness: true
   validates :password, presence: true
+  include PgSearch
+  pg_search_scope :search_by_user, :against => :username
+
   
 end

@@ -12,6 +12,7 @@ class Api::AnswersController < ApplicationController
     if @answer.save
      render json: @answer 
   end
+end
 
   def index
     @answer = Answer.all
